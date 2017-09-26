@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Tarea1</title>
+    </head>
+    <body>
+        <h1>Calculadora 2 operadores</h1>
+        <form>
+            Introduce el primer operador
+            <input type="text" id="1operador"/>
+            <br>
+            Introduce el operador
+            <select id="operador">
+                <option value="1">+</option>
+                <option value="2">-</option>
+                <option value="3">/</option>
+                <option value="4">*</option>
+            </select>
+            <br>
+            Introduce el segundo operador
+            <input type="text" id="2operador"/>
+            <br>
+            Resultado esperado
+            <input type="text" id="resultado"/>
+            <br>
+            <input type="button" id="validar" value="Comprobar" onclick="verificar();"/>
+            <input type="reset" id="limpiar" value="Limpiar"/>
+            <br><br><br>
+            <p id="validación">
+        </form>
+        <script>
+            function verificar(){
+                var opr1 = document.getElementById("1operador").value;
+                var opr2 = document.getElementById("2operador").value;
+                var opr = document.getElementById("operador").value;
+                var resul = document.getElementById("resultado").value;
+                var correccion = document.getElementById("validación");
+                
+                if(opr == 1){
+                    if(Number(opr1) + Number(opr2) == Number(resul)){
+                        correccion.innerHTML = "Correcto!";
+                    }else{
+                        correccion.innerHTML = "Inorrecto :(";
+                    }
+                }else if(opr == 2){
+                    if(Number(opr1) - Number(opr2) == Number(resul)){
+                        correccion.innerHTML = "Correcto!";
+                    }else{
+                        correccion.innerHTML = "Inorrecto :(";
+                    }
+                }else if(opr == 3){
+                    if(Number(opr1) / Number(opr2) == Number(resul)){
+                        correccion.innerHTML = "Correcto!";
+                    }else{
+                        correccion.innerHTML = "Inorrecto :(";
+                    }
+                }else if(opr == 4){
+                    if(Number(opr1) * Number(opr2) == Number(resul)){
+                        correccion.innerHTML = "Correcto!";
+                    }else{
+                        correccion.innerHTML = "Inorrecto :(";
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
