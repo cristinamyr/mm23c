@@ -19,7 +19,7 @@
     </head>
     <body>
         <h1>Calculadora 2 operadores</h1>
-        <form id="miFormulario">
+        <form>
             Introduce el primer operador
             <input type="text" id="1operador"/>
             <br>
@@ -40,7 +40,7 @@
             <input type="button" class="botones" id="validar" value="Comprobar" onclick="verificar();"/>
             <input type="reset" class="botones" id="limpiar" value="Limpiar" onclick="eliminar();"/>
             <br><br><br>
-            <p id="validacion" >
+            <img id="validacion" src="">
         </form>
         <script>
             function verificar(){
@@ -52,9 +52,9 @@
                 
                 if(opr == 1){
                     if(Number(opr1) + Number(opr2) == Number(resul)){
-                        correccion.innerHTML = "Correcto!";
+                        correccion.src = "http://dc389.4shared.com/img/tHCx_wgR/s3/Gif_animado_para_orkut9xgoi8t1.gif";
                     }else{
-                        correccion.innerHTML = "Inorrecto :(";
+                        correccion.src = "https://userscontent2.emaze.com/images/be203749-a82c-4839-82d4-d477a5f47601/02cb1018-784f-471e-8aab-57a5fa691a1a.gif";
                     }
                 }else if(opr == 2){
                     if(Number(opr1) - Number(opr2) == Number(resul)){
@@ -78,7 +78,7 @@
             }
             function eliminar(){
                 var correccion = document.getElementById("validacion");
-                correccion.innerHTML = " ";
+                correccion.src = "";
             }
         </script>
     </body>

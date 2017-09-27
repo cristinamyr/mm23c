@@ -37,49 +37,52 @@
             Resultado esperado
             <input type="text" id="resultado"/>
             <br>
-            <input type="button" class="botones" id="validar" value="Comprobar" onclick="verificar();"/>
-            <input type="reset" class="botones" id="limpiar" value="Limpiar" onclick="eliminar();"/>
+            <input type="button" class="botones" id="validar" value="Comprobar"/>
+            <input type="reset" class="botones" id="limpiar" value="Limpiar"/>
             <br><br><br>
             <p id="validacion" >
         </form>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         <script>
-            function verificar(){
-                var opr1 = document.getElementById("1operador").value;
-                var opr2 = document.getElementById("2operador").value;
-                var opr = document.getElementById("operador").value;
-                var resul = document.getElementById("resultado").value;
-                var correccion = document.getElementById("validacion");
-                
+
+            $("#validar").click("validar", function(event){
+                var opr1 = $("#1operador").val();
+                var opr2 = $("#2operador").val();
+                var opr = $("#operador").val();
+                var resul = $("#resultado").val();
+
+                console.log(opr);
+
                 if(opr == 1){
                     if(Number(opr1) + Number(opr2) == Number(resul)){
-                        correccion.innerHTML = "Correcto!";
+                        $("#validacion").text("Correcto!"); 
                     }else{
-                        correccion.innerHTML = "Inorrecto :(";
+                        $("#validacion").text("Incorrecto :(");
                     }
                 }else if(opr == 2){
                     if(Number(opr1) - Number(opr2) == Number(resul)){
-                        correccion.innerHTML = "Correcto!";
+                        $("#validacion").text("Correcto!"); 
                     }else{
-                        correccion.innerHTML = "Inorrecto :(";
+                        $("#validacion").text("Incorrecto :(");
                     }
                 }else if(opr == 3){
                     if(Number(opr1) / Number(opr2) == Number(resul)){
-                        correccion.innerHTML = "Correcto!";
+                        $("#validacion").text("Correcto!"); 
                     }else{
-                        correccion.innerHTML = "Inorrecto :(";
+                        $("#validacion").text("Incorrecto :(");
                     }
                 }else if(opr == 4){
                     if(Number(opr1) * Number(opr2) == Number(resul)){
-                        correccion.innerHTML = "Correcto!";
+                        $("#validacion").text("Correcto!"); 
                     }else{
-                        correccion.innerHTML = "Inorrecto :(";
+                        $("#validacion").text("Incorrecto :(");
                     }
                 }
-            }
-            function eliminar(){
-                var correccion = document.getElementById("validacion");
-                correccion.innerHTML = " ";
-            }
+            });
+
+            $("#limpiar").click("limpiar", function(event){
+                $("#validacion").text(" ");
+            });
         </script>
     </body>
 </html>
