@@ -45,7 +45,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         <script>
 
-            $("#validar").click("validar", function(event){
+            $("#validar").click(function(event){
                 var opr1 = $("#1operador").val();
                 var opr2 = $("#2operador").val();
                 var opr = $("#operador").val();
@@ -80,7 +80,7 @@
                 }
             });
 
-            $("#limpiar").click("limpiar", function(event){
+            $("#limpiar").click( function(event){
                 $("#validacion").text(" ");
             });
         </script>

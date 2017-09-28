@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/mathjs/3.16.3/math.js"></script>
+        <meta charset="utf-8">
+        <title>Tarea3</title>
+        <style>
+            body{
+                background-color: #b3d9ff;
+                font: small-caps 100%/200% serif;
+                text-align: center;
+            }
+            .botones{
+              background-color: #ff6666;
+            }
+            #validacion{
+                font: oblique bold 200% cursive;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Calculadora 2 operadores</h1>
+        <form id="miFormulario">
+            Introduce una expresión (Ej: 2*3+4) 
+            <input type="text" id="expresion"/>
+            <br>
+            Resultado esperado
+            <input type="text" id="resultado"/>
+            <br>
+            <input type="button" class="botones" id="validar" value="Comprobar" onclick="verificar();"/>
+            <input type="reset" class="botones" id="limpiar" value="Limpiar" onclick="eliminar();"/>
+            <br><br><br>
+            <p id="validacion" >
+        </form>
+        <script>
+            function verificar(){
+                var expr = document.getElementById("expresion").value;
+                var resul = document.getElementById("resultado").value;
+                var correccion = document.getElementById("validacion");
+                
+                var sol = math.eval(expr);
+                
+                if(sol == Number(resul)){
+                    correccion.innerHTML = "Correcto!";
+                }else{
+                    correccion.innerHTML = "Inorrecto :(";
+                }
+            }
+            function eliminar(){
+                var correccion = document.getElementById("validacion");
+                correccion.innerHTML = " ";
+            }
+        </script>
+    </body>
+</html>
