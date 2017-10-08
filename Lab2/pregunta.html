@@ -40,7 +40,7 @@
 					Imagen relacionada con la pregunta <input typ="uploadedfile" type="file" id="fichero" name="fichero"><br>
 					<input type="submit" id="enviar" name="enviar">
 				</form> 
-				<p id="parrafo">
+				<img src="" width="250px" />
 			</div>
 		</section>
 		<footer class="main" id="f1">
@@ -92,13 +92,25 @@
 				alert("Introduce un tema");
 				return false;
 			} });
-		$("#fichero").change(function(event){
-			var img = $("#fichero");
+		$("#fichero").click(function(event){
 
-			var newImg = $("<img>");
-			console.log($("#fichero"));
-			newImg.attr("src", 'img.val()');
-			$("#parrafo").append(newImg);
+			$("input[type=file]").change(function() {
+		        readURL(this);
+		    });
+
+		    const readURL = (input) => {
+ 
+		        if (input.files && input.files[0]) {
+		            const reader = new FileReader();
+		 
+		            reader.onload = (e) => {
+		                $('img').attr('src', e.target.result)
+		            }
+		            reader.readAsDataURL(input.files[0]);
+		        }
+		    };
+
+			
 		})
 
 	</script>
