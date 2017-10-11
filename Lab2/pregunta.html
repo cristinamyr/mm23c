@@ -38,9 +38,9 @@
 					Complejidad de la pregunta entre 1 y 5(*): <input type="text"  size="10" id="complejidad" name="complejidad"><br>
 					Tema de la pregunta(*): <input type="text" size="30"  id="tema" name="tema"><br>
 					Imagen relacionada con la pregunta <input typ="uploadedfile" type="file" id="fichero" name="fichero"><br>
-					<input type="submit" id="enviar" name="enviar">
+					<input type="submit" id="enviar" name="enviar"> 
+					<input type="reset" id="btnReset" name="reset" value="reset"><br>
 				</form> 
-				<img src="" width="250px" />
 			</div>
 		</section>
 		<footer class="main" id="f1">
@@ -92,26 +92,49 @@
 				alert("Introduce un tema");
 				return false;
 			} });
+
 		$("#fichero").click(function(event){
 
-			$("input[type=file]").change(function() {
+			$("input[type=file]").change(function(event) {
 		        readURL(this);
 		    });
-
+		    if(!$("#imagen").length){
+				var $foto = $('<img id="imagen" src="" alt="imagen seleccionada por el usuario" width="250px">');
+						    
+	 			$("#fpreguntas").append($foto);
+	 		}
+		   
 		    const readURL = (input) => {
  
 		        if (input.files && input.files[0]) {
 		            const reader = new FileReader();
 		 
 		            reader.onload = (e) => {
-		                $('img').attr('src', e.target.result)
+		                $('#imagen').attr('src', e.target.result);
 		            }
 		            reader.readAsDataURL(input.files[0]);
-		        }
-		    };
-
+		       	}
 			
-		})
+			}
+	    	
+	        if(!$("#resetImg").length){
+	        	var input = $("<input/>", {
+					  type: "button",
+					  id: "resetImg",
+					  name: "quitar imagen",
+					  value: "quitar imagen" 
+				});
+				$("#fpreguntas").append(input);					
+		        $("#resetImg").bind("click", function(){ 
+				$("#imagen").remove();
+				$("#resetImg").remove();
+				delete $('#imagen');
+	    		delete $('#resetImg');
+	    		$('#fichero').val("");} );
+		    }
+		});
+	    
+		
 
 	</script>
 
