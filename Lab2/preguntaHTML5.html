@@ -51,22 +51,44 @@
 	<script type="text/javascript">
 		$("#fichero").click(function(event){
 
-			$("input[type=file]").change(function() {
+			$("input[type=file]").change(function(event) {
 		        readURL(this);
 		    });
-
+		    if(!$("#imagen").length){
+				var $foto = $('<img id="imagen" src="" alt="imagen seleccionada por el usuario" width="250px">');
+						    
+	 			$("#fpreguntas").append($foto);
+	 		}
+		   
 		    const readURL = (input) => {
  
 		        if (input.files && input.files[0]) {
 		            const reader = new FileReader();
 		 
 		            reader.onload = (e) => {
-		                $('img').attr('src', e.target.result)
+		                $('#imagen').attr('src', e.target.result);
 		            }
 		            reader.readAsDataURL(input.files[0]);
-		        }
-		    };			
-		})
+		       	}
+			
+			}
+	    	
+	        if(!$("#resetImg").length){
+	        	var input = $("<input/>", {
+					  type: "button",
+					  id: "resetImg",
+					  name: "quitar imagen",
+					  value: "quitar imagen" 
+				});
+				$("#fpreguntas").append(input);					
+		        $("#resetImg").bind("click", function(){ 
+				$("#imagen").remove();
+				$("#resetImg").remove();
+				delete $('#imagen');
+	    		delete $('#resetImg');
+	    		$('#fichero').val("");} );
+		    }
+		});
 	</script>
 </body>
 </html>
