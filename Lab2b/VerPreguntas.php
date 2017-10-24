@@ -35,7 +35,7 @@ $local = 1;
 	</nav>
     <section class="main" id="s1">
     
-	<div>
+	<div id="preguntas_div" style="overflow:scroll; height:350px; width:95%;">
 		<table id="preguntas" name="preguntas" border>
 		<?php 
 		
@@ -50,6 +50,7 @@ $local = 1;
 		echo "<th>Respuesta incorrecta 3</th>";
 		echo "<th>Complejidad</th>";
 		echo "<th>Tema</th>";
+		echo "<th>Foto</th>";
 		echo "</tr>";
 
 		while($row = mysqli_fetch_row($result)){
@@ -62,6 +63,13 @@ $local = 1;
 			echo "<td>".$row[6]."</td>";
 			echo "<td>".$row[7]."</td>";
 			echo "<td>".$row[8]."</td>";
+			echo "<td>";
+			if ($row[9]!= ""){
+				echo "<img alt='imagen' width='150px'src='data:image/x-png;base64,".base64_encode($row[9]). "'/>"; 
+			}else {
+				echo " No hay imagen ";
+			}
+			echo "</td>";
 			echo "</tr>";
 		}
 
@@ -71,7 +79,7 @@ $local = 1;
     </section>
 	<footer class='main' id='f1'>
 		<p><a href="http://es.wikipedia.org/wiki/Quiz" target="_blank">Que es un Quiz?</a></p>
-		<a href='https://github.com/cristinamyr/mm23c/tree/master/Lab2'>Link GITHUB</a>
+		<a href='https://github.com/cristinamyr/mm23c/tree/master/Lab2b'>Link GITHUB</a>
 	</footer>
 </div>
 </body>

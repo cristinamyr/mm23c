@@ -10,7 +10,6 @@ $r_i2 = $_POST['r_inc_2'];
 $r_i3 = $_POST['r_inc_3'];
 $complejidad = $_POST['complejidad'];
 $tema = $_POST['tema'];
-//$foto = $_POST['fichero'];
 
 
 $sql = "INSERT INTO Preguntas (email, enunciado, r_c, r_i1, r_i2, r_i3, complejidad, tema) VALUES ('$email', '$enuc', '$r_c', '$r_i1', '$r_i2', '$r_i3', '$complejidad', '$tema')";
