@@ -36,7 +36,6 @@
 					
 				}else{
 					echo '<script language="javascript"> alert("El email introducido no existe en la base de datos. Inténtalo de nuevo..")</script>';
-					include "header_nav_unlogged.php";
 				}
 				mysqli_close($conn);
 

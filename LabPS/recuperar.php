@@ -15,12 +15,7 @@
 </head>
 <body>
 	<div id='page-wrap'>
-		<?php 
-			if isset($_POST['email'])
-			include "conexion.php";
-			include "header_nav_unlogged.php";
-			
-    	?>
+			<?php include "header_nav_unlogged.php"; ?>
 		<section class="main" id="s1">
 			<div>
 				<form id="flogin" method="post" name="login" action="Login.php" method="post" enctype="multipart/form-data">

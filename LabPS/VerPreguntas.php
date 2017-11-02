@@ -1,6 +1,5 @@
 <?php
 include "conexion.php";
-$local = 1;
 ?>
 
 <!DOCTYPE html>

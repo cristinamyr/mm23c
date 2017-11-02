@@ -21,11 +21,11 @@
 		<section class="main" id="s1">
 			<div>
 				<form id="fregistro" method="post" name="registro" action="Registrar.php" method="post" enctype="multipart/form-data">
-					E-mail(*):<input type="text"  size="50" id="email" name="email" pattern="[a-zA-Z]+[0-9]{3}@ikasle\.ehu\.eu?s" required /><br>
-					Nombre y Apellidos(*): <input type="text" size="80"  id="nombre" name="nombre" pattern="[a-zA-Z]+[ ][a-zA-Z]+" required /><br>
-					Nick(*): <input type="text" size="80" id="nick" name="nick" pattern="[a-zA-Z]+" required /><br>
-					Password(*): <input type="password" size="80"  id="password" name="password" pattern=".{6,}" required /><br>
-					Repetir password(*): <input type="password"  size="80" id="password2" name="password2" required /><br>
+					E-mail(*):<input type="text"  size="50" id="email" name="email" /><br>
+					Nombre y Apellidos(*): <input type="text" size="80"  id="nombre" name="nombre" /><br>
+					Nick(*): <input type="text" size="80" id="nick" name="nick" /><br>
+					Password(*): <input type="password" size="80"  id="password" name="password" /><br>
+					Repetir password(*): <input type="password"  size="80" id="password2" name="password2" /><br>
 					Foto: <input typ="uploadedfile" type="file" id="fichero" name="fichero"><br>
 					<input type="submit" id="enviar" name="enviar">
 					<input type="reset" id="BorrarDatos" name="BorrarDatos"><br>
@@ -115,17 +115,6 @@
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script type="text/javascript">
-		$("#enviar").click(function(){
-			var $password = $("#password").val();
-			var $password2 = $("#password2").val();
-			if($password == $password2){
-				return true;
-			}else{
-				alert("Error: contraseña incorrecta");
-				return false;
-			}
-		});
-
 		$("#fichero").click(function(event){
 
 			$("input[type=file]").change(function(event) {
