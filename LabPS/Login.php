@@ -30,7 +30,7 @@
 					if($path != ""){
 						$path = "si";
 					}else{$path = "no";}
-					echo '<script language="javascript"> alert("Bienvenido/a '.$row[1].'!") </script>';
+				echo '<script language="javascript"> alert("Bienvenido/a '.$row[1].'!"); window.location.assign("layout.php?email='.$email.'&path='.$path.'")</script>';
 					include "header_nav_logged.php";
 				}else{
 					echo '<script language="javascript"> alert("El usuario no existe. Intentalo de nuevo.")</script>';
