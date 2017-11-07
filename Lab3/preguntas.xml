@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="VerPreguntas.xsl"?>
+<assessmentItems>
+	<assessmentItem complexity="2" subject="Web" author="jvadillo001@ikasle.ehu.es">
+		<itemBody>
+			<p>Tag HTML para a&#xF1;adir un formulario</p>
+		</itemBody>
+		<correctResponse>
+			<value>
+				FORM
+			</value>
+		</correctResponse>
+		<incorrectResponses>
+			<value> OBJECT </value>
+			<value> TABLE </value>
+			<value> DIV </value>
+		</incorrectResponses>
+	</assessmentItem>
+	<assessmentItem complexity="4" subject="Internet" author="rarruabarrena001@ikasle.ehu.eus">
+		<itemBody>
+			<p>Este protocolo acabar&#xE1; funcionando
+			incluso entre dos latas unidas por un cord&#xF3;n</p>
+		</itemBody>
+		<correctResponse>
+			<value>
+				TCP/IP
+			</value>
+		</correctResponse>
+		<incorrectResponses>
+			<value> HTTP </value>
+			<value> SMTP </value>
+			<value> Ninguna es correcta </value>
+		</incorrectResponses>
+	</assessmentItem>
+	<assessmentItem complexity="1" subject="&#xF1;sdfj" author="mmayor004@ikasle.ehu.eus">
+		<itemBody>
+			<p>Esta es mi primera pregunta de prueba</p>
+		</itemBody>
+		<correctResponse>
+			<value>Correcta</value>
+		</correctResponse>
+		<incorrectResponses>
+			<value>incorrecta </value>
+			<value>incorrect</value>
+			<value>incorrect</value>
+		</incorrectResponses>
+	</assessmentItem>
+<assessmentItem complexity="1" subject="Prueba" author="mmayor004@ikasle.ehu.eus"><itemBody><p>Ha logrado cristina solucionar el problema?</p></itemBody><correctResponse><value>Est&#xE1; claro que si&#xB4;</value></correctResponse><incorrectResponses><value>obvio, no</value><value>como lo va a solucionar?</value><value>no sabr&#xED;a solucionar nada</value></incorrectResponses></assessmentItem></assessmentItems>
