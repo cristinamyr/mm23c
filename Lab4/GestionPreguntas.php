@@ -48,7 +48,7 @@
 			<?php include "footer.php";?>
 		</footer>
 	</div>
-	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script type="text/javascript">	
 
 
@@ -56,16 +56,29 @@
 		setInterval(function(){cuantasPreguntas();},20000);
 
 		function cuantasPreguntas(){
-			var xhr = new XMLHttpRequest();
-			var email = document.getElementById("email").value;
-			xhr.open("GET", "numeroPreguntas.php?email="+email);
-			xhr.send();
+			// Con JavaScript -> Funciona bien
+			// var xhr = new XMLHttpRequest();
+			// var email = document.getElementById("email").value;
+			// xhr.open("GET", "numeroPreguntas.php?email="+email);
+			// xhr.send();
 
-			xhr.onreadystatechange = function(){
-				if (xhr.readyState == 4 && xhr.status == 200){
-					document.getElementById("numPreguntas").innerHTML = xhr.responseText;
-				}
-			}
+			// xhr.onreadystatechange = function(){
+			// 	if (xhr.readyState == 4 && xhr.status == 200){
+			// 		document.getElementById("numPreguntas").innerHTML = xhr.responseText;
+			// 	}
+			// }
+
+			//Con Jquery función $.ajax -> funciona bien
+			// $.ajax({
+			//     url:'numeroPreguntas.php?email='+ $("#email").val(),
+			//     success:function(n){
+			//      $('#numPreguntas').fadeIn().html(n);}
+			//    });
+
+			//con jquery función $.get
+			var jqxhr = $.get("numeroPreguntas.php", {email:$("#email").val()}, function(n){
+		    $('#numPreguntas').fadeIn(1000).html(n);
+		   });
 		} 
 
 		function cuantosConectados(){
@@ -76,7 +89,6 @@
 			xhr.onreadystatechange = function(){
 				
 				if (xhr.readyState == 4 && xhr.status == 200){
-					
 					document.getElementById("personasConectadas").innerHTML = "usuarios conectados: " + xhr.responseText;
 				}
 			}
