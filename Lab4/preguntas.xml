@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="VerPreguntas.xsl"?>
+<assessmentItems>
+	<assessmentItem complexity="2" subject="Web" author="jvadillo001@ikasle.ehu.es">
+		<itemBody>
+			<p>Tag HTML para a&#xF1;adir un formulario</p>
+		</itemBody>
+		<correctResponse>
+			<value>
+				FORM
+			</value>
+		</correctResponse>
+		<incorrectResponses>
+			<value> OBJECT </value>
+			<value> TABLE </value>
+			<value> DIV </value>
+		</incorrectResponses>
+	</assessmentItem>
+	<assessmentItem complexity="4" subject="Internet" author="rarruabarrena001@ikasle.ehu.eus">
+		<itemBody>
+			<p>Este protocolo acabar&#xE1; funcionando
+			incluso entre dos latas unidas por un cord&#xF3;n</p>
+		</itemBody>
+		<correctResponse>
+			<value>
+				TCP/IP
+			</value>
+		</correctResponse>
+		<incorrectResponses>
+			<value> HTTP </value>
+			<value> SMTP </value>
+			<value> Ninguna es correcta </value>
+		</incorrectResponses>
+	</assessmentItem>
+<assessmentItem complexity="1" subject="&#xF1;aklsdfj&#xF1;alkdsfjads&#xF1;klfj" author="mmayor004@ikasle.ehu.eus"><itemBody><p>&#xF1;alfjalkdsfjal&#xF1;fh&#xF1;aldkfj</p></itemBody><correctResponse><value>&#xF1;lkadfjak&#xF1;ldsfjak&#xF1;ldsfj&#xF1;lk</value></correctResponse><incorrectResponses><value>j&#xF1;klsdfj&#xF1;lskdfjakls&#xF1;j</value><value>&#xF1;ilkfjsd&#xF1;lkfjsd&#xF1;lfkj</value><value>2&#xF1;jsdf&#xF1;lkgjsfdl&#xF1;gkj&#xF1;k&#xBA;</value></incorrectResponses></assessmentItem></assessmentItems>
