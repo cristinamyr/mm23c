@@ -3,15 +3,15 @@
 $local = 1; //poner a 0 para 000webhost
 
 if ($local == 1){
-    $host = "localhost";
-    $usuario = "root";
-    $pw = "";
-    $bd = "quiz";
+    $host = "**********";
+    $usuario = "**********";
+    $pw = "**********";
+    $bd = "**********";
 }else{
-    $host = "localhost";
-    $usuario  = "id3045607_2223";
-    $pw = "SGW2223";
-    $bd = "id3045607_quiz";
+    $host = "**********";
+    $usuario  = "**********";
+    $pw = "**********";
+    $bd = "**********";
 }
 
 $conn = mysqli_connect($host, $usuario, $pw, $bd); 
