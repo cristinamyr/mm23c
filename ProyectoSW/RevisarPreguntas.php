@@ -78,9 +78,15 @@
 		    	document.getElementById("resultado").innerHTML="<img src='loading.gif' align='center' width='60px'/>";
 
 		        if(xhr.readyState == 4 && xhr.status == 200){
+		        	borrar();
 		            document.getElementById("resultado").innerHTML = xhr.responseText;
 		        }
 		    }		  
+		}
+
+		function borrar(){
+			var sel = document.getElementById("id");
+			sel.remove(sel.selectedIndex);
 		}
 
 		function modifPreg(){
