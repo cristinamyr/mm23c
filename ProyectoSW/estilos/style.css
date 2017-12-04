@@ -1,0 +1,19 @@
+@charset "utf-8";
+* 						{margin: 0; padding: 0;}
+body					{font: 16px Avenir, serif;}
+
+#page-wrap				{margin: 2% auto; color: white;}
+#page-wrap >.main 		{border: 1px solid #f2f2f2; padding: 1%;
+						 margin-bottom: 1px; color: black;}
+
+#preguntas_div			{overflow:scroll; height:360px; width:100%;}
+#resul					{overflow:scroll; height:80px; width:100%;}
+
+section > div				{padding: 20px;}
+header, nav, section		{background: #f2f2f2; text-align: center;}
+footer					{background: #f2f2f2; text-align: center;}
+nav span             				{ margin: 0px 10px 0px 0px;
+						width: 100%;
+						display: inline-block;}
+
+#ErrorMsgs          		 { color: #f61; font-size: smaler}
