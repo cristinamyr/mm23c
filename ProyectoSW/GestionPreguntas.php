@@ -33,7 +33,7 @@
 			<p id="personasConectadas" align="center">...</p>
 			<p id="numPreguntas" align="center">...</p>
 			<div>
-				<form id="fpreguntas" method="post" name="preguntas" >
+				<form id="fpreguntas" method="post" name="preguntas" enctype="multipart/form-data">
 					E-mail(*):<input type="text"  size="50" id="email" name="email" value=<?php echo '"'.$_SESSION['email'].'"'?> disabled/><br>
 					Enunciado(*): <input type="text" size="80"  id="enunciado" name="enunciado" required/><br>
 					Respuesta correcta(*): <input type="text" size="80" id="r_correcta" name="r_correcta" required/><br>
@@ -43,7 +43,7 @@
 					Complejidad de la pregunta entre 1 y 5(*): <input type="text"  size="10" id="complejidad" name="complejidad" pattern="[1-5]{1}" required/><br>
 					Tema de la pregunta(*): <input type="text" size="30"  id="tema" name="tema" required/><br>
 					Imagen relacionada con la pregunta <input typ="uploadedfile" type="file" id="fichero" name="fichero"><br>
-					<input type="button" id="submitpregunta" name="submitpregunta" value="Añadir pregunta" onclick="submitPregunta();">
+					<input type="submit" id="submitpregunta" name="submitpregunta" value="Añadir pregunta">
 					<input type="button" id="verPreg" name="verPreg" value="Ver Preguntas" onclick="verPreguntas();">
 				</form> 				
 			</div>
@@ -92,31 +92,25 @@
 			}
 		}
 
-		function submitPregunta(){
-			var email = document.getElementById("email").value;
-            var enunciado = document.getElementById("enunciado").value;
-            var r_c = document.getElementById("r_correcta").value;
-            var r_i1 = document.getElementById("r_inc_1").value;
-            var r_i2 = document.getElementById("r_inc_2").value;
-            var r_i3 = document.getElementById("r_inc_3").value;
-           	var complejidad = document.getElementById("complejidad").value;
-            var tema = document.getElementById("tema").value;
-            var fichero = document.getElementById("fichero").value;
 
-		    xhr = new XMLHttpRequest();
-		    var variables = "email="+ email +"&enunciado="+ enunciado +"&r_correcta="+ r_c +"&r_inc_1="+ r_i1 +"&r_inc_2="+ r_i2 +"&r_inc_3="+ r_i3+"&complejidad="+ complejidad+"&tema="+ tema+"&fichero"+fichero;
-		    xhr.open("POST", "guardar.php", true);
-		    xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-		    xhr.send(variables);
+		$("#fpreguntas").submit(function(e){
 
-		    xhr.onreadystatechange = function(){
-		    	document.getElementById("resul").innerHTML="<img src='loading.gif' align='center' width='60px'/>";
-
-		        if(xhr.readyState == 4 && xhr.status == 200){
-		            document.getElementById("resul").innerHTML = xhr.responseText;
-		        }
-		    }		  
-		}
+			e.preventDefault();
+			
+				var data = new FormData(this);
+				$.ajax({
+					url: "guardar.php",
+					type: 'POST',
+					data: data,
+					processData: false,
+					cache: false,
+					contentType: false,
+					success: function(e){
+						quitar_foto();
+						$("#resul").html(e);
+					}
+				});
+		});	
 
 		function quitar_foto(){
 			$("#imagen").remove();
@@ -134,7 +128,7 @@
 		    if(!$("#imagen").length){
 				$("#preguntas").remove();
 
-				var $foto = $('<img id="imagen" src="" alt="imagen seleccionada por el usuario" width="250px">');
+				var $foto = $('<img id="imagen" src="" alt="imagen seleccionada por el usuario" width="200px">');
 						    
 	 			$("#fpreguntas").append($foto);
 	 		}

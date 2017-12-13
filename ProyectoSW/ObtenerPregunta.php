@@ -1,9 +1,10 @@
 <?php 
-session_start();
-if (!isset($_SESSION['rol'])) {
-	            echo '<script language="javascript">alert("Para acceder aquí necesitas estar logeado");</script>';
-	            header('Location: layout.php');
-	        }
+	session_start();
+	
+	if (!isset($_SESSION['rol'])) {
+        echo '<script language="javascript">alert("Para acceder aquí necesitas estar logeado");</script>';
+        header('Location: layout.php');
+    }
 
 	include "conexion.php";
 

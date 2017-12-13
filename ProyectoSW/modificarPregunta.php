@@ -1,9 +1,9 @@
 <?php 
-session_start();
-if (!isset($_SESSION['rol'])) {
-	            echo '<script language="javascript">alert("Debes estar logeado para acceder a este conenido");</script>';
-	            header('Location: layout.php');
-	        }
+	session_start();
+	if (!isset($_SESSION['rol'])) {
+        echo '<script language="javascript">alert("Debes estar logeado para acceder a este conenido");</script>';
+        header('Location: layout.php');
+    }
 
 	require_once("funciones.inc");
 	include "conexion.php";

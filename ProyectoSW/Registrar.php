@@ -117,8 +117,8 @@
 
 						if (valoresCompletos($conn)){
 							if ($_FILES["fichero"]["type"]){
-							    $imagen=mysqli_real_escape_string($conn, file_get_contents($_FILES["fichero"]["tmp_name"]));
-							    $ruta= "imagenusuario/".$email; 
+							    $imagen = mysqli_real_escape_string($conn, file_get_contents($_FILES["fichero"]["tmp_name"]));
+							    $ruta = "imagenusuario/".$email; 
 								move_uploaded_file($_FILES['fichero']['tmp_name'], $ruta); 
 							    $sql = "INSERT INTO Usuarios (email, nombre, nick, password, imagen, path) VALUES ('$email', '$nombre', '$nick', '$hashPass', '$imagen', '$ruta')";
 							}else{

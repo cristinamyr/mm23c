@@ -4,9 +4,11 @@ include "conexion.php";
 
 require_once("nusoap-master/src/nusoap.php");
 
-if ($local ==1)$ns="http://localhost/Lab7/nusoap-master/samples"; 
-else $ns = "https://lab1-2223.000webhostapp.com/Lab7/nusoap-master/samples";
-
+if ($local == 1){
+	$ns = "nusoap-master/samples"; 
+} else {
+	$ns = "https://lab1-2223.000webhostapp.com/Lab7/nusoap-master/samples";
+}
 
 $server = new soap_server;
 $server->configureWSDL('comprobarPass',$ns);
