@@ -18,6 +18,33 @@
 	<?php
 		include "insertarNav.php";
 		@session_start();
+<<<<<<< HEAD
+		 	$_SESSION['arrayPreguntas'] = array();		
+	?>
+	<section class="main" id="s1">
+		<div id="jugar">
+			¿Quieres probar suerte pregunta a pregunta?<br>
+			<input type='button' id='nuevaPregunta' value='Pregunta' onclick='nuevaPreg();'>
+			<br>
+			<br>
+			<br>
+			¿O prefieres probar por tema?<br>
+			<select id="tema">
+				<?php 
+
+					include "conexion.php";
+
+					$result = mysqli_query($conn, "SELECT DISTINCT tema FROM Preguntas ");
+					
+					while($row = mysqli_fetch_row($result)){
+						echo "<option value='".$row[0]."'>".$row[0]."</option>";
+					}
+
+				?>
+		    </select>
+		    <br>
+			<input type='button' id='nuevaPregunta' value='Preguntas' onclick='nuevaPregTema();'>
+=======
 		if (!isset($_SESSION['arrayPreguntas'][])){
 			$array = array();
 		 	$_SESSION['arrayPreguntas'][] = $array;
@@ -27,6 +54,7 @@
 		<div id="jugar">
 			¿Quieres probar suerte?<br>
 			<input type='button' id='nuevaPregunta' value='Pregunta' onclick='nuevaPreg();'>
+>>>>>>> 6c4d46680fc55b0cae8fa53f96af9967e014edfe
 		</div>
 	</section>
 	<footer class='main' id='f1'>
@@ -59,9 +87,23 @@
 		});
 	}	
 
+<<<<<<< HEAD
+	function nuevaPregTema(){
+		$.ajax({
+			url:'nuevaPregunta.php?tema='+ $("#tema").val(),
+			success:function(n){
+				$('#jugar').fadeIn().html(n);}
+		});
+	}	
+
+	function enviarResp(){
+		$.ajax({
+			url:'aciertoFallo.php?respuesta='+ $("#resp:checked").val() + '&id=' + $("#idPreg").val() ,
+=======
 	function enviarResp(){
 		$.ajax({
 			url:'aciertoFallo.php?respuesta='+ $("#resp:checked").val() + '&id=' + $("#idPreg").val(),
+>>>>>>> 6c4d46680fc55b0cae8fa53f96af9967e014edfe
 			success:function(n){
 				$('#jugar').fadeIn().html(n);}
 		});

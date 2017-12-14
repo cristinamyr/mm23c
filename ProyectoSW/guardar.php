@@ -23,7 +23,11 @@ session_start();
 		$complejidad = $_POST['complejidad'];
 		$tema = $_POST['tema'];
 
+<<<<<<< HEAD
+		if (($_FILES["fichero"]["tmp_name"])!=""){
+=======
 		if (isset($_FILES["fichero"]["tmp_name"])){
+>>>>>>> 6c4d46680fc55b0cae8fa53f96af9967e014edfe
 		    $imagen = mysqli_real_escape_string($conn, file_get_contents($_FILES["fichero"]["tmp_name"]));
 		    $sql = "INSERT INTO Preguntas (email, enunciado, r_c, r_i1, r_i2, r_i3, complejidad, tema, foto) VALUES ('$email', '$enuc', '$r_c', '$r_i1', '$r_i2', '$r_i3', '$complejidad', '$tema','$imagen')";
 		}else{
